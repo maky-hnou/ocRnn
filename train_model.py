@@ -2,6 +2,8 @@ import argparse
 import shutil
 from pathlib import Path
 
+from pprint import pprint
+
 import yaml
 import tensorflow as tf
 
@@ -15,7 +17,7 @@ from callbacks import XTensorBoard
 def train(config_file, save_dir, model_path):
     with open(config_file, 'r') as configs:
         config = yaml.load(configs, Loader=yaml.Loader)['train']
-    print('configration:', config)
+    pprint(config)
 
     strategy = tf.distribute.MirroredStrategy()
     batch_size = \
@@ -35,7 +37,7 @@ def train(config_file, save_dir, model_path):
     if config['restore']:
         model.load_weights(config['restore'], by_name=True, skip_mismatch=True)
 
-    model.summary()
+    # model.summary()
 
     callbacks = [
         tf.keras.callbacks.ModelCheckpoint(model_path),
@@ -62,4 +64,9 @@ if __name__ == '__main__':
     shutil.copy(args.config, args.save_dir / args.config.name)
     prefix = '{epoch}_{sequence_accuracy:.4f}_{val_sequence_accuracy:.4f}'
     model_path = f'{args.save_dir}/{prefix}.h5'
+
+    config = tf.compat.v1.ConfigProto()
+    config.gpu_options.per_process_gpu_memory_fraction = 0.4
+    tf.compat.v1.keras.backend.set_session(
+        tf.compat.v1.Session(config=config))
     train(args.config, args.save_dir, model_path)
