@@ -41,6 +41,7 @@ class Model():
                             padding='same', name='pool6'))
 
         model.add(Conv2D(filters=512, kernel_size=(3, 3),
+                         padding='same',
                          use_bias=False, name='conv7'))
         model.add(BatchNormalization(name='bn7'))
         model.add(Activation('relu', name='relu7'))
