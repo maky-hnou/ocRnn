@@ -40,4 +40,4 @@ eval:
         <<: *ds_builder
     ann_paths:
         - 'data/test/test.txt'
-    batch_size: 128
+    batch_size: 32
