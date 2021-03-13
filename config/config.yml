@@ -5,23 +5,23 @@ dataset_builder: &ds_builder
     img_shape: [32, null, 3]
     # The image that width greater than max img_width will be dropped.
     # Only work with image width is null.
-    max_img_width: 300
+    max_img_width: 500
     ignore_case: true
 
 train:
     dataset_builder:
         <<: *ds_builder
     train_ann_paths:
-        - 'mnt/ramdisk/max/90kDICT32px/annotation_train.txt'
-        - 'mnt/ramdisk/max/90kDICT32px/annotation_val.txt'
+        - 'data/train/train.txt'
+        - 'data/eval/eval.txt'
     val_ann_paths:
-        - 'mnt/ramdisk/max/90kDICT32px/annotation_test.txt'
-    batch_size_per_replica: 512
+        - 'data/test/test.txt'
+    batch_size_per_replica: 32
     # The model for restore, even if the number of characters is different
     restore: ''
     learning_rate: 0.001
     # Number of epochs to train.
-    epochs: 50
+    epochs: 100
     # Reduce learning rate when a metric has stopped improving.
     # ReduceLROnPlateau Arguments
     # https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau#arguments
@@ -39,5 +39,5 @@ eval:
     dataset_builder:
         <<: *ds_builder
     ann_paths:
-        - '/datasets/ICDAR/2013/Challenge2_Test_Task3_gt.txt'
+        - 'data/test/test.txt'
     batch_size: 128
