@@ -7,11 +7,11 @@ from pprint import pprint
 import yaml
 import tensorflow as tf
 
-from dataset_factory import DatasetBuilder
-from model import Model
-from loss import CTCLoss
-from metrics import SequenceAccuracy
-from callbacks import XTensorBoard
+from utils.dataset_factory import DatasetBuilder
+from model.model import Model
+from utils.loss import CTCLoss
+from utils.metrics import SequenceAccuracy
+from utils.callbacks import XTensorBoard
 
 
 def train(config_file, save_dir, model_path):
@@ -36,8 +36,6 @@ def train(config_file, save_dir, model_path):
 
     if config['restore']:
         model.load_weights(config['restore'], by_name=True, skip_mismatch=True)
-
-    # model.summary()
 
     callbacks = [
         tf.keras.callbacks.ModelCheckpoint(model_path),
@@ -66,7 +64,7 @@ if __name__ == '__main__':
     model_path = f'{args.save_dir}/{prefix}.h5'
 
     config = tf.compat.v1.ConfigProto()
-    config.gpu_options.per_process_gpu_memory_fraction = 0.4
+    config.gpu_options.per_process_gpu_memory_fraction = 0.3
     tf.compat.v1.keras.backend.set_session(
         tf.compat.v1.Session(config=config))
     train(args.config, args.save_dir, model_path)
