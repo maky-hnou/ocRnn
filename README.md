@@ -62,11 +62,11 @@ python3 train_model.py --config <config_file_path> --save_dir <path_where_to_sav
 ```
 It is to notice that you need at least a 4GB GPU to be able to run the training. And the process will be so slow. So it is better to run the training on a server with a dedicated GPU (Colab, AWS ...).
 
- **3- Test the trained model:**  
+ **4- Test the trained model:**  
  There is a trained model, ready to use, included in `saved_model/` folder.  
  To run the text recognition, use the following command:  
  ```
- python3 test_model.py --config <config_file_path> --model <saved_model_path>
+ python3 test_model.py --images <path_to_images> --config <config_file_path> --model <saved_model_path>
  ```
 [python-version]:https://img.shields.io/badge/python-3.8-brightgreen.svg
 [issues-image]:https://img.shields.io/github/issues/maky-hnou/ocRnn.svg
