@@ -74,9 +74,9 @@ It is to notice that you need at least a 4GB GPU to be able to run the training.
 ![Delighted](test_images/5_Delighted.png)
 ![Tiredness](test_images/6_Tiredness.png)
 
-*Label:* wonderful  *Prediction:* [b'wonderfull'] *Confidence:* [0.88882595]  
-*Label:* delighted  *Prediction:* [b'delighted'] *Confidence:* [0.99961174]  
-*Label:* tiredness  *Prediction:* [b'tiredness'] *Confidence:* [0.9998624]  
+**Label:** wonderful  **Prediction:** [b'wonderfull'] **Confidence:** [0.56338775]  
+**Label:** delighted  **Prediction:** [b'delighted'] **Confidence:** [0.9994946]  
+**Label:** tiredness  **Prediction:** [b'tiredness'] **Confidence:** [0.9997297]  
 
 [python-version]:https://img.shields.io/badge/python-3.8-brightgreen.svg
 [issues-image]:https://img.shields.io/github/issues/maky-hnou/ocRnn.svg
