@@ -70,9 +70,9 @@ It is to notice that you need at least a 4GB GPU to be able to run the training.
  ```
 
  **5- Demo:**  
-![Wonderful](test_images/4_Wonderful.jpg)
-![Delighted](test_images/5_Delighted.jpg)
-![Tiredness](test_images/6_Tiredness.jpg)
+![Wonderful](test_images/4_Wonderful.png)
+![Delighted](test_images/5_Delighted.png)
+![Tiredness](test_images/6_Tiredness.png)
 
 *Label:* wonderful  *Prediction:* [b'wonderfull'] *Confidence:* [0.88882595]  
 *Label:* delighted  *Prediction:* [b'delighted'] *Confidence:* [0.99961174]  
