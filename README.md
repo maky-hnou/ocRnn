@@ -51,7 +51,23 @@ Activate the virtual environment: `workon ocrnn` (To deactivate the virtual envi
 
 **3- Run the training:**  
 *The dataset:*  The dataset used to train the model is available via this [link](https://www.robots.ox.ac.uk/~vgg/data/text/): a 10 GB dataset.  
+Once downloaded, extract it, then make the following changes to the `config/config.yml` file:  
+[Line 15](https://github.com/maky-hnou/ocRnn/blob/main/config/config.yml#L15): put the path the training annotations.  
+[Line 16](https://github.com/maky-hnou/ocRnn/blob/main/config/config.yml#L16): put the path the evaluation annotations.  
+[Line 18](https://github.com/maky-hnou/ocRnn/blob/main/config/config.yml#L18): put the path the test annotations.
 
+Once everything is set up, run the training command:  
+```
+python3 train_model.py --config <config_file_path> --save_dir <path_where_to_save_the_model>
+```
+It is to notice that you need at least a 4GB GPU to be able to run the training. And the process will be so slow. So it is better to run the training on a server with a dedicated GPU (Colab, AWS ...).
+
+ **3- Test the trained model:**  
+ There is a trained model, ready to use, included in `saved_model/` folder.  
+ To run the text recognition, use the following command:  
+ ```
+ python3 test_model.py --config <config_file_path> --model <saved_model_path>
+ ```
 [python-version]:https://img.shields.io/badge/python-3.8-brightgreen.svg
 [issues-image]:https://img.shields.io/github/issues/maky-hnou/ocRnn.svg
 [issues-url]:https://github.com/maky-hnou/ocRnn/issues
