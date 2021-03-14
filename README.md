@@ -68,6 +68,16 @@ It is to notice that you need at least a 4GB GPU to be able to run the training.
  ```
  python3 test_model.py --images <path_to_images> --config <config_file_path> --model <saved_model_path>
  ```
+
+ **5- Demo:**  
+![Wonderful](test_images/4_Wonderful.jpg)
+![Delighted](test_images/5_Delighted.jpg)
+![Tiredness](test_images/6_Tiredness.jpg)
+
+*Label:* wonderful  *Prediction:* [b'wonderfull'] *Confidence:* [0.88882595]  
+*Label:* delighted  *Prediction:* [b'delighted'] *Confidence:* [0.99961174]  
+*Label:* tiredness  *Prediction:* [b'tiredness'] *Confidence:* [0.9998624]  
+
 [python-version]:https://img.shields.io/badge/python-3.8-brightgreen.svg
 [issues-image]:https://img.shields.io/github/issues/maky-hnou/ocRnn.svg
 [issues-url]:https://github.com/maky-hnou/ocRnn/issues
