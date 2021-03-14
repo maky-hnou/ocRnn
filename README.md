@@ -74,7 +74,7 @@ It is to notice that you need at least a 4GB GPU to be able to run the training.
 ![Delighted](test_images/5_Delighted.png)
 ![Tiredness](test_images/6_Tiredness.png)
 
-**Label:** wonderful  **Prediction:** [b'wonderfull'] **Confidence:** [0.56338775]  
+**Label:** wonderful  **Prediction:** [b'wonderful'] **Confidence:** [0.56338775]  
 **Label:** delighted  **Prediction:** [b'delighted'] **Confidence:** [0.9994946]  
 **Label:** tiredness  **Prediction:** [b'tiredness'] **Confidence:** [0.9997297]  
 
