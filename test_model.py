@@ -7,11 +7,11 @@ from tensorflow import keras
 from utils.decoders import CTCGreedyDecoder
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--images', type=str, required=True,
+parser.add_argument('--images', type=str, default="test_images/5_Delighted.png",
                     help='Image file or folder path.')
-parser.add_argument('--config', type=Path, required=True,
+parser.add_argument('--config', type=Path, default="saved_model/config.yml",
                     help='The config file path.')
-parser.add_argument('--model', type=str, required=True,
+parser.add_argument('--model', type=str, default="saved_model/saved_model.h5",
                     help='The saved model.')
 args = parser.parse_args()
 
